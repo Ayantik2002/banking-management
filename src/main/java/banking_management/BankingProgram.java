@@ -1,4 +1,4 @@
-package java_programs.gg_bank;
+package banking_management;
 
 import java.util.Scanner;
 
@@ -10,10 +10,7 @@ public class BankingProgram {
         System.out.print("Enter account number: ");
         String accountNumber = scanner.nextLine();
 
-        System.out.print("Enter initial balance: ");
-        double initialBalance = scanner.nextDouble();
-
-        BankAccount account = new BankAccount(accountNumber, initialBalance);
+        BankAccount account = new BankAccount(accountNumber);
 
         while (true) {
             System.out.println("\nSelect an option:");
@@ -22,16 +19,18 @@ public class BankingProgram {
             System.out.println("3. Check Balance");
             System.out.println("4. Exit");
 
+            System.out.print("\nYour choice: ");
             int choice = scanner.nextInt();
+            System.out.println();
 
             switch (choice) {
                 case 1:
-                    System.out.print("Enter amount to deposit: ");
+                    System.out.print("Enter amount to deposit: Rs. ");
                     double depositAmount = scanner.nextDouble();
                     account.deposit(depositAmount);
                     break;
                 case 2:
-                    System.out.print("Enter amount to withdraw: ");
+                    System.out.print("Enter amount to withdraw: Rs. ");
                     double withdrawAmount = scanner.nextDouble();
                     account.withdraw(withdrawAmount);
                     break;
